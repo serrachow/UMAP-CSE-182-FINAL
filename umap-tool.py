@@ -1,5 +1,9 @@
 import sys
 import argparse
+from functions import pca_neighbors
+from functions import plot_pca_neighbors
+import anndata as ad
+import scanpy as sc
 
 def main():
     print("Uniform Manifold Approximation and Projection Tool Configurations...")
@@ -11,6 +15,7 @@ def main():
     h5ad_file = args.h5ad_file
 
     print("Reading", h5ad_file + "...")
+    adata = sc.read_h5ad(h5ad_file)
 
     n_pcs = 50
     n_neighbors = 15
@@ -25,8 +30,11 @@ def main():
             n_neighbors = input_config[1]
         elif (input_config[0] == "Done"):
             proceed = False
-            print("Running UMAP Tool")
-    
+
+    print("Running PCA Neighbors...")
+    data_pca, distances, indices = pca_neighbors(adata, n_pcs, n_neighbors)
+    print("Plotting PCA Neighbors...")
+    plot_pca_neighbors(data_pca, indices)
 
 
 def configurations_print(n_pcs, n_neighbors):

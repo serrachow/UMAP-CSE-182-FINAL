@@ -54,4 +54,5 @@ def plot_pca_neighbors(data_pca, indices):
     plt.ylabel('PCA Component 2')
     plt.title('PCA of Cells with Nearest Neighbors')
     plt.legend()
+    plt.savefig("PCA_plot.png")
     plt.show()
