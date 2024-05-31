@@ -54,7 +54,7 @@ your_function_name(arguments)
 - `README.md`: Project documentation.
 
 ## Contributors
-This project was developed by Ignatius Jenie (A16923484), Serena Chuang (A17302920), Jiyuan Zhu (A16636193)
+This project was developed by Ignatius Jenie (A16923484), Serena Chuang (A17302920), Jiyuan Zhu (A16636193).
 The dataset is sourced from the NeurIPS 2021 Multimodal Single-Cell Data Integration benchmarking dataset.
 
 For any corrections or suggestions:
