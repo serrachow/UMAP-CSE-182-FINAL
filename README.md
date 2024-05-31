@@ -18,6 +18,8 @@ Ensure you have Python installed. Required libraries can be found in `requiremen
 1. Clone the repository:
    ```bash
    git clone https://github.com/serrachow/UMAP-TOOL-CSE-182-FINAL.git
+   ```
+   ```bash
    cd UMAP-TOOL-CSE-182-FINAL
    ```
  2. Install necessary packages:
