@@ -49,10 +49,8 @@ The data used for this tool was generated using the `preprocess.ipynb` notebook 
 - `mypackage/`: Contains the package modules.
 - `__init__.py`: Initializes the package.
 - `functions.py`: Contains helper functions for data processing and visualization.
-- `umap_tool.py`: Script for running the tool from the command line.
 - `setup.py`: Script for setting up the package.
 - `README.md`: Project documentation.
-- `requirements.txt`: Required libraries.
 
 ## Contributors
 
