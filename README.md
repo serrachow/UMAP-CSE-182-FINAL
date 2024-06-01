@@ -1,61 +1,62 @@
-# UMAP-CSE-182-FINAL
-
-for **UC San Diego CSE 185 Spring 2024**
-
-by Ignatius Jenie, Jiyuan Zhu, Serena Chuang
 
 # UMAP Tool
 
-## Public Dataset
+For **UC San Diego CSE 185 Spring 2024**
 
-The dataset included is from Open Problems' **NeurIPS 2021: Multimodal Single-Cell Data Integration** benchmarking dataset, which is collected from bone marrow mononuclear cells of 12 healthy human donors. This dataset offers a comprehensive set of cellular populations, making it ideal for showcasing the detailed and nuanced visualization capabilities of our custom UMAP tool.
+by Ignatius Jenie, Jiyuan Zhu, Serena Chuang
 
-## Getting Started
-### Prerequisites
-Ensure you have Python installed. Required libraries can be found in `requirements.txt`.
+## Description
 
-### Installation
+This package performs PCA and UMAP dimensionality reduction on single-cell RNA-seq data stored in `.h5ad` files and saves the results to a specified directory.
+
+## Installation
+
 1. Clone the repository:
    ```bash
    git clone https://github.com/serrachow/UMAP-TOOL-CSE-182-FINAL.git
-   ```
-   ```bash
    cd UMAP-TOOL-CSE-182-FINAL
    ```
- 2. Install necessary packages:
-    ```bash
-    pip install -r requirements.txt
-    ```
+
+2. Install the package:
+   ```bash
+   python setup.py install --user
+   ```
 
 ## Usage
-### Running the UMAP Tool
-To run the UMAP Tool, use the following command:
-```bash
-python umap-tool.py <dataset>
-```
-### Preprocessing Data
-The preprocessing steps are detailed in the Jupyter Notebook:
-```bash
-jupyter notebook preprocess.ipynb
-```
-### Using Helper Functions
-Functions for data processing and visualization are stored in functions.py. You can import and use them in your scripts as follows:
-```bash
-from functions import your_function_name
 
-# Example usage
-your_function_name(arguments)
+To use the tool, run the following command:
+```bash
+umap-tool path_to_your_file.h5ad --output_dir your_output_directory
 ```
+
+You will be prompted to configure the number of principal components and nearest neighbors interactively.
+
+## Example
+
+```bash
+umap-tool /path/to/your_data.h5ad --output_dir ./out
+```
+
+This command will process the input `.h5ad` file, perform PCA and UMAP transformations, and save the results (both plot and CSV) in the specified output directory.
+
+## Data
+
+The data used for this tool was generated using the `preprocess.ipynb` notebook or can be downloaded directly from the following links:
+- [Data File 1](https://drive.google.com/file/d/18H1GYi7swykG-7rd3bKtUUP_e7EZJBTO/view?usp=sharing)
+- [Data File 2](https://drive.google.com/file/d/1BzPd3DBIzZa3T0PpaU236cautzjMbC7i/view?usp=sharing)
 
 ## Repository Structure
-- `functions.py`: Contains helper functions for data processing and visualization.
-- `preprocess.ipynb`: Jupyter Notebook for data preprocessing steps.
-- `umap-tool.py`: Main script to run the UMAP visualization.
+- `mypackage/`: Contains the package modules.
+  - `__init__.py`: Initializes the package.
+  - `functions.py`: Contains helper functions for data processing and visualization.
+  - `umap_tool.py`: Script for running the tool from the command line.
+- `setup.py`: Script for setting up the package.
 - `README.md`: Project documentation.
+- `requirements.txt`: Required libraries.
 
 ## Contributors
-This project was developed by Ignatius Jenie (A16923484), Serena Chuang (A17302920), Jiyuan Zhu (A16636193).
-The dataset is sourced from the NeurIPS 2021 Multimodal Single-Cell Data Integration benchmarking dataset.
+
+This project was developed by Ignatius Jenie (A16923484), Serena Chuang (A17302920), Jiyuan Zhu (A16636193). The dataset is sourced from the NeurIPS 2021 Multimodal Single-Cell Data Integration benchmarking dataset.
 
 For any corrections or suggestions:
 1. Fork the repository.
@@ -63,6 +64,3 @@ For any corrections or suggestions:
 3. Commit your changes (`git commit -m 'Add some feature'`).
 4. Push to the branch (`git push origin feature-branch`).
 5. Open a pull request.
-
-
-
