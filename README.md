@@ -22,11 +22,27 @@ This package performs PCA and UMAP dimensionality reduction on single-cell RNA-s
    python setup.py install --user
    ```
 
+3. Add to path: replace <user> with your username
+   ```bash
+   export PATH=$PATH:/home/<user>/.local/bin
+   ```
+
+4. Install requirements:
+   ```bash
+   pip install --user -r requirements.txt
+   ```
+
+
 ## Usage
 
 To use the tool, run the following command:
 ```bash
-python umap-tool.py <database>
+umap-tool --output_dir <output directory> <.h5ad file>
+```
+
+Install example data from [Data File 2](https://drive.google.com/file/d/1BzPd3DBIzZa3T0PpaU236cautzjMbC7i/view?usp=sharing):
+```bash
+curl -L -o 500_genes.h5ad 'https://drive.google.com/uc?export=download&id=1BzPd3DBIzZa3T0PpaU236cautzjMbC7i'
 ```
 
 You will be prompted to configure the number of principal components and nearest neighbors interactively.
@@ -34,7 +50,7 @@ You will be prompted to configure the number of principal components and nearest
 ## Example
 
 ```bash
-python umap-tool.py /path/to/your_data.h5ad 
+umap-tool --output_dir ./out 500_genes.h5ad
 ```
 
 This command will process the input `.h5ad` file, perform PCA and UMAP transformations, and save the results (both plot and CSV) in the specified output directory.
