@@ -51,7 +51,7 @@ def umap_transform(data_pca, n_neighbors=15, min_dist=0.1):
     data_umap = reducer.fit_transform(data_pca)
     return data_umap
 
-def plot_umap(data_umap, output_dir, png_name):
+def plot_umap(data_umap, output_dir, png_name="umap.png"):
     """
     Plot UMAP results and save the plot.
     
