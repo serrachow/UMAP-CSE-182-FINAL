@@ -32,12 +32,20 @@ This package performs PCA and UMAP dimensionality reduction on single-cell RNA-s
    pip install --user -r requirements.txt
    ```
 
+## Troubleshooting Installation
+
+If the setup of the package, does not work, you can also run a non-package python file for the same results. Input `.h5ad` file and output directory are needed, `-p` and `-c` are optional.
+   ```bash
+   git clone https://github.com/serrachow/UMAP-TOOL-CSE-182-FINAL.git
+   cd UMAP-TOOL-CSE-182-FINAL
+   python <input .h5ad> <output directory> -p <png name> -c <csv name>
+   ```
 
 ## Usage
 
 To use the tool, run the following command:
 ```bash
-umap-tool --output_dir <output directory> <.h5ad file>
+umap-tool <input .h5ad> <output directory> -p <png name> -c <csv name>
 ```
 
 Install example data from [Data File 2](https://drive.google.com/file/d/1BzPd3DBIzZa3T0PpaU236cautzjMbC7i/view?usp=sharing):
@@ -45,7 +53,7 @@ Install example data from [Data File 2](https://drive.google.com/file/d/1BzPd3DB
 curl -L -o 500_genes.h5ad 'https://drive.google.com/uc?export=download&id=1BzPd3DBIzZa3T0PpaU236cautzjMbC7i'
 ```
 
-You will be prompted to configure the number of principal components and nearest neighbors interactively.
+You will be prompted to configure the number of principal components, nearest neighbors, minimum distance in the UMAP, and png and csv name interactively in a pop up menu.
 
 ## Example
 
@@ -53,7 +61,7 @@ You will be prompted to configure the number of principal components and nearest
 umap-tool --output_dir ./out 500_genes.h5ad
 ```
 
-This command will process the input `.h5ad` file, perform PCA and UMAP transformations, and save the results (both plot and CSV) in the specified output directory.
+This command will process the input `.h5ad` file, perform PCA and UMAP transformations, and save the results (both plot and CSV) in the specified output directory. Type `Done` when you have finished all setup configurations.
 
 ## Data
 
@@ -69,6 +77,7 @@ The data used for this tool was generated using the `preprocess.ipynb` notebook 
 - `setup.py`: Script for setting up the package.
 - `README.md`: Project documentation.
 - `requirements.txt`: Required libraries.
+- `umap_tool.py`: Backup python file if the setup does not run.
 
 ## Contributors
 
