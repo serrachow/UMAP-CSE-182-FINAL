@@ -44,6 +44,7 @@ If the setup of the package, does not work, you can also run a non-package pytho
 ## Usage
 
 To use the tool, run the following command:
+Input `.h5ad` and output directory are needed, `-p` and `-c` are optional.
 ```bash
 umap-tool <input .h5ad> <output directory> -p <png name> -c <csv name>
 ```
